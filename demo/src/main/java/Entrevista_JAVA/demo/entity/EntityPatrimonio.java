@@ -15,13 +15,16 @@ public class EntityPatrimonio {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
+    @Column(nullable = false)
     private String nome;
 
+    @Column(nullable = false)
     private Integer codigo;
 
     @Enumerated(EnumType.STRING)
     private EnumTipoPATRIMONIO enumTipo;
 
+    @Column(nullable = false)
     private LocalDate dataEntrada;
 
     @ManyToOne
@@ -43,13 +46,6 @@ public class EntityPatrimonio {
         this.enumTipo = enumTipo;
         this.dataEntrada = dataEntrada;
         this.estabelecimento = estabelecimento;
-    }
-
-    //Desativar patrimônio
-    public EntityPatrimonio(LocalDate dataBaixa,String motivoBaixa) {
-        this.dataBaixa = dataBaixa;
-        this.motivoBaixa = motivoBaixa;
-        this.baixa = true;
     }
 
     public EntityPatrimonio() {

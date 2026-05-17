@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -38,7 +39,18 @@ public class EntityEmprestimo {
             joinColumns = @JoinColumn(name = "id_emprestimo"),
             inverseJoinColumns = @JoinColumn(name = "id_patrimonio")
     )
-    private List<EntityPatrimonio> entityPatrimonioList;
+    private List<EntityPatrimonio> entityPatrimonioList = new ArrayList<>();
+
+    public EntityEmprestimo(EntityEstabelecimento estabelecimentoRequerente,
+                            EntityEstabelecimento estabelecimentoAtendente,
+                            LocalDate dataEmprestimo,
+                            LocalDate dataDevolucao) {
+        this.estabelecimentoRequerente = estabelecimentoRequerente;
+        this.estabelecimentoAtendente = estabelecimentoAtendente;
+        this.dataEmprestimo = dataEmprestimo;
+        this.dataDevolucao = dataDevolucao;
+    }
+
 
     public EntityEmprestimo() {
 

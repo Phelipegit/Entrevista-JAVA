@@ -14,7 +14,8 @@ public class BaixaRequest {
 
     private String motivoBaixa;
 
-    private BaixaRequest(UUID id,LocalDate localDate, String motivoBaixa) {
+    public BaixaRequest(UUID id,LocalDate localDate, String motivoBaixa) {
+        this.id = id;
         this.localDate = localDate;
         this.motivoBaixa = motivoBaixa;
     }
