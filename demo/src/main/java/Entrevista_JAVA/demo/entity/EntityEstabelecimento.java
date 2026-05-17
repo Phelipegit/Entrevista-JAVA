@@ -1,5 +1,6 @@
 package Entrevista_JAVA.demo.entity;
 
+import Entrevista_JAVA.demo.EnumTipoESTABELECIMENTO;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
@@ -23,9 +24,9 @@ public class EntityEstabelecimento {
     @Column(unique = true)
     private String cnpj;
 
-    private String tipoEstabelecimento;
+    private EnumTipoESTABELECIMENTO tipoEstabelecimento;
 
-    @OneToMany(mappedBy = "estabelecimentoRequerente" )
+    @OneToMany(mappedBy = "estabelecimentoRequerente")
     private List<EntityEmprestimo> emprestimosRequeridos;
 
     @OneToMany(mappedBy = "estabelecimentoAtendente")
@@ -33,10 +34,11 @@ public class EntityEstabelecimento {
 
     private Integer tempoMaximoEmprestimo;
 
-    public EntityEstabelecimento(String nome, String cnpj,String tipoEstabelecimento) {
+    public EntityEstabelecimento(String nome, String cnpj, EnumTipoESTABELECIMENTO tipoEstabelecimento, Integer tempoMaximoEmprestimo) {
         this.nome = nome;
         this.cnpj = cnpj;
         this.tipoEstabelecimento = tipoEstabelecimento;
+        this.tempoMaximoEmprestimo = tempoMaximoEmprestimo;
     }
 
     public EntityEstabelecimento() {

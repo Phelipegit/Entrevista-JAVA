@@ -1,7 +1,10 @@
 package Entrevista_JAVA.demo.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -23,6 +26,7 @@ public class EntityEmprestimo {
     @ManyToOne
     @JoinColumn(name = "id_atendente")
     private EntityEstabelecimento estabelecimentoAtendente;
+
 
     private LocalDate dataEmprestimo;
 

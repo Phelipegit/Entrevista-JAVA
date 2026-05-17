@@ -1,6 +1,7 @@
 package Entrevista_JAVA.demo.model;
 
 import Entrevista_JAVA.demo.EnumTipoESTABELECIMENTO;
+
 import lombok.Getter;
 
 @Getter
