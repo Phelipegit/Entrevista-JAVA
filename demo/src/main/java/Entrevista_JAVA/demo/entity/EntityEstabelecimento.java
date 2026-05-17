@@ -23,14 +23,22 @@ public class EntityEstabelecimento {
     @Column(unique = true)
     private String cnpj;
 
-    @OneToMany(mappedBy = "estabelecimento")
-    List<EntityEmprestimo> entityEmprestimos;
+    private String tipoEstabelecimento;
 
-    public EntityEstabelecimento(String nome, String cnpj) {
+    @OneToMany(mappedBy = "estabelecimentoRequerente" )
+    private List<EntityEmprestimo> emprestimosRequeridos;
+
+    @OneToMany(mappedBy = "estabelecimentoAtendente")
+    private List<EntityEmprestimo> emprestimosAtendens;
+
+    private Integer tempoMaximoEmprestimo;
+
+    public EntityEstabelecimento(String nome, String cnpj,String tipoEstabelecimento) {
         this.nome = nome;
         this.cnpj = cnpj;
+        this.tipoEstabelecimento = tipoEstabelecimento;
     }
-    
+
     public EntityEstabelecimento() {
 
     }

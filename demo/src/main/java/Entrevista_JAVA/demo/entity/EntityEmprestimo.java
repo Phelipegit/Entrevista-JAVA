@@ -31,7 +31,7 @@ public class EntityEmprestimo {
     @ManyToMany
     @JoinTable(
             name = "emprestimo_patrimonio",
-            joinColumns = @JoinColumn(name = "id"),
+            joinColumns = @JoinColumn(name = "id_emprestimo"),
             inverseJoinColumns = @JoinColumn(name = "id_patrimonio")
     )
     private List<EntityPatrimonio> entityPatrimonioList;

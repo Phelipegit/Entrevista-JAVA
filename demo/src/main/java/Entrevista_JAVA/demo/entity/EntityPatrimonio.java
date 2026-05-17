@@ -1,6 +1,6 @@
 package Entrevista_JAVA.demo.entity;
 
-import Entrevista_JAVA.demo.EnumTipo;
+import Entrevista_JAVA.demo.EnumTipoPATRIMONIO;
 import jakarta.persistence.*;
 import lombok.Getter;
 
@@ -19,7 +19,7 @@ public class EntityPatrimonio {
     private Integer codigo;
 
     @Enumerated(EnumType.STRING)
-    private EnumTipo enumTipo;
+    private EnumTipoPATRIMONIO enumTipo;
 
     private LocalDate dataEntrada;
 
@@ -33,16 +33,19 @@ public class EntityPatrimonio {
 
     private String motivoBaixa;
 
-    public EntityPatrimonio(String nome, Integer codigo, EnumTipo enumTipo, LocalDate dataEntrada) {
+    public EntityPatrimonio(String nome, Integer codigo, EnumTipoPATRIMONIO enumTipo, LocalDate dataEntrada, EntityEstabelecimento estabelecimento) {
         this.nome = nome;
         this.codigo = codigo;
         this.enumTipo = enumTipo;
         this.dataEntrada = dataEntrada;
+        this.estabelecimento = estabelecimento;
     }
 
+    //Desativar patrimônio
     public EntityPatrimonio(LocalDate dataBaixa,String motivoBaixa) {
         this.dataBaixa = dataBaixa;
         this.motivoBaixa = motivoBaixa;
+        this.baixa = true;
     }
 
     public EntityPatrimonio() {
