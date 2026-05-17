@@ -25,6 +25,12 @@ public class EntityPatrimonio {
     @JoinColumn(name = "id_estabelecimento")
     private EntityEstabelecimento estabelecimento;
 
+    private Boolean baixa = false;
+
+    private LocalDate dataBaixa;
+
+    private String motivoBaixa;
+
     public EntityPatrimonio(String nome, Integer codigo, EnumTipo enumTipo, LocalDate dataEntrada) {
         this.nome = nome;
         this.codigo = codigo;
