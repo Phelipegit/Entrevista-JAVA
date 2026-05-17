@@ -15,15 +15,18 @@ public class EntityEstabelecimento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(nullable = false)
     private UUID id;
 
     @NotBlank
+    @Column(nullable = false)
     private String nome;
 
     @CNPJ
-    @Column(unique = true)
+    @Column(unique = true,nullable = false)
     private String cnpj;
 
+    @Column(nullable = false)
     private EnumTipoESTABELECIMENTO tipoEstabelecimento;
 
     @OneToMany(mappedBy = "estabelecimentoRequerente")
@@ -32,6 +35,7 @@ public class EntityEstabelecimento {
     @OneToMany(mappedBy = "estabelecimentoAtendente")
     private List<EntityEmprestimo> emprestimosAtendens;
 
+    @Column(nullable = false)
     private Integer tempoMaximoEmprestimo;
 
     public EntityEstabelecimento(String nome, String cnpj, EnumTipoESTABELECIMENTO tipoEstabelecimento, Integer tempoMaximoEmprestimo) {

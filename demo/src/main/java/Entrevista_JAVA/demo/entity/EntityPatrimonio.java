@@ -3,6 +3,7 @@ package Entrevista_JAVA.demo.entity;
 import Entrevista_JAVA.demo.EnumTipoPATRIMONIO;
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.UUID;
@@ -27,10 +28,13 @@ public class EntityPatrimonio {
     @JoinColumn(name = "id_estabelecimento")
     private EntityEstabelecimento estabelecimento;
 
+    @Setter
     private Boolean baixa = false;
 
+    @Setter
     private LocalDate dataBaixa;
 
+    @Setter
     private String motivoBaixa;
 
     public EntityPatrimonio(String nome, Integer codigo, EnumTipoPATRIMONIO enumTipo, LocalDate dataEntrada, EntityEstabelecimento estabelecimento) {
