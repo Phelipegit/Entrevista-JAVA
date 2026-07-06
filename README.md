@@ -12,8 +12,7 @@ O candidato terá 3 dias corridos a partir da disponibilização deste arquivo p
 
 ## Especificações
 * Postgres 14+
-* CodeIgniter - Nesse teste é necessário implementar a Camada de Serviços (Service Layer)
-
+* 
 ## Observações
 *Este projeto conta com o ambiente de banco dados já prepardo no docker.*
 - Quaisquer configurações ou alterações necessárias para que o projeto seja executado,
